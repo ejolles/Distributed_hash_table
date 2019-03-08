@@ -1,0 +1,24 @@
+# Precompiled and compiled files
+*.gch
+*.o
+*.so
+
+# Executables
+pps-client-cat
+pps-client-find
+pps-client-get
+pps-client-put
+pps-client-substr
+pps-dump-node
+pps-launch-server
+pps-list-nodes
+test-hashtable
+test-servers
+test-parser
+week04
+
+# Log files
+packets.log
+
+# Notes
+tests_to_perform

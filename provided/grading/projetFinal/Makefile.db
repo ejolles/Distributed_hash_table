@@ -1,0 +1,47 @@
+CFLAGS += -std=c11
+CFLAGS += -pedantic -O2
+CFLAGS += -W -Wall -Wextra -Wcast-align -Wfloat-equal -Wpointer-arith -Wformat=2 -Winit-self -Wuninitialized -Wshadow -Wno-unused-parameter -Wbad-function-cast -Wunreachable-code -Wwrite-strings -Wconversion
+#CFLAGS += -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wcast-qual
+LDLIBS += -lcheck -lm -lrt -pthread -lsubunit -lcrypto
+LDLIBS += -DDEBUG -g
+
+EXEC = test-hashtable    \
+	   week04            \
+	   pps-launch-server \
+	   pps-client-put    \
+	   pps-client-get    \
+	   log-packets.so    \
+	   pps-list-nodes    \
+	   pps-dump-node     \
+	   pps-client-cat    \
+	   pps-client-substr \
+	   pps-client-find   \
+	   test-servers
+
+
+# ==================================== #
+all: $(EXEC)
+# ------------------------------------ #
+
+# Linking compiled files
+pps-client-cat: args.c client.c error.c hashtable.c network.c node.c node_list.c ring.c system.c util.c
+pps-client-find: args.c client.c error.c hashtable.c network.c system.c node.c node_list.c ring.c system.c util.c
+pps-client-get: args.c client.c error.c hashtable.c network.c system.c node.c node_list.c ring.c system.c util.c
+pps-client-put: args.c client.c error.c hashtable.c network.c system.c node.c node_list.c ring.c system.c util.c
+pps-client-substr: args.c client.c error.c hashtable.c network.c system.c node.c node_list.c ring.c system.c util.c
+pps-dump-node: args.c client.c error.c hashtable.c network.c node.c node_list.c ring.c system.c util.c
+pps-launch-server: args.c client.c error.c hashtable.c network.c node.c node_list.c ring.c system.c util.c
+pps-list-nodes: args.c client.c error.c hashtable.c network.c node.c node_list.c ring.c system.c util.c
+test-hashtable: args.c client.c error.c hashtable.c network.c node.c node_list.c ring.c system.c util.c
+test-servers: args.c client.c error.c hashtable.c network.c system.c node.c node_list.c ring.c system.c util.c
+week04: args.c client.c error.c hashtable.c network.c node.c node_list.c ring.c system.c util.c
+
+# External Makefiles
+log-packets.so: Makefile.log-packets
+	make -f $^
+
+
+# Clean
+clean:
+	rm *.o $(EXEC)
+

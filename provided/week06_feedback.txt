@@ -1,0 +1,63 @@
+Submission correctly tagged with: 'week06' (sha: 2233f5828d78582c1e9fc517b275d124cdd8fe1b)
+--------
+Checking for expected files
+Found expected file done/node.c on tag week06
+Found expected file done/network.h on tag week06
+Found expected file done/network.c on tag week06
+Found expected file done/hashtable.c on tag week06
+Found expected file done/Makefile on tag week06
+Found expected file done/client.h on tag week06
+Found expected file done/pps-client-put.c on tag week06
+Found expected file done/log-packets.c on tag week06
+Found expected file done/node_list.h on tag week06
+Found expected file done/ring.h on tag week06
+Found expected file done/pps-launch-server.c on tag week06
+Found expected file done/hashtable.h on tag week06
+Found expected file done/pps-client-get.c on tag week06
+Found expected file done/client.c on tag week06
+Found expected file done/node.h on tag week06
+Found expected file done/node_list.c on tag week06
+--------
+Test test-hashtable returned code 1
+stdout:
+Running suite(s): hashtable.h
+83%: Checks: 6, Failures: 0, Errors: 1
+test-hashtable.c:69:P:hashtable:add_value_does_retrieve_same_value:0: Passed
+test-hashtable.c:88:P:hashtable:add_value_twice_erase_older:0: Passed
+test-hashtable.c:134:P:hashtable:add_with_NULL_table_return_ERR_BAD_PARAMETER:0: Passed
+test-hashtable.c:99:P:hash_function:should_be_in_range:0: Passed
+test-hashtable.c:104:E:hash_function:zero_size_return_0:0: (after this point) Received signal 8 (Floating point exception)
+test-hashtable.c:116:P:hash_function:invalid_size_return_0:0: Passed
+
+------
+stderr:
+
+
+-------------------------
+Running test scripts
+
+
+Test 05.basic.sh returned code 0
+stdout:
+>> running 05.basic.sh
+Test 1 (server launch): PASS
+Test 2 (client put): PASS
+Test 3 (client get): PASS
+SUCCESS
+
+------
+stderr:
+
+-----------
+Test 06.basic.sh returned code 0
+stdout:
+>> running 06.basic.sh
+Test 1 (launch 1st server): PASS
+Test 2 (launch 2nd server): PASS
+Test 3 (put, 2 servers): PASS
+Test 4 (get, 2 servers): PASS
+SUCCESS
+
+------
+stderr:
+
